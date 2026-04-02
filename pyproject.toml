@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "analyse-budget-cameroun"
+version = "0.1.0"
+description = "Analyse budgétaire et sémantique des lois de finances du Cameroun"
+authors = ["ASSA Allo"]
+readme = "README.md"
+packages = [{include = "analyse_budget", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+# Interface
+streamlit = "^1.35.0"
+
+# PDF & extraction
+pdfplumber = "^0.11.0"
+pymupdf = "^1.24.0"          # fitz - extraction images PDF
+
+# LLM & API
+openai = "^1.30.0"
+python-dotenv = "^1.0.0"
+
+# NLP & embeddings
+sentence-transformers = "^3.0.0"
+scikit-learn = "^1.5.0"
+
+# Data & calcul
+pandas = "^2.2.0"
+numpy = "^1.26.0"
+
+# Visualisation
+plotly = "^5.22.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+black = "^24.0.0"
+ruff = "^0.4.0"
+ipykernel = "^6.29.0"       
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100

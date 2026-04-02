@@ -1,0 +1,1546 @@
+[
+  {
+    "code": "168",
+    "libelle": "FORMULATION COORDINATION DE L’ACTION PRÉSIDENTIELLE",
+    "cp": "21 459 760",
+    "ae": "21 459 760",
+    "chapitre": "CHAPITRE 01 - PRESIDENCE DE LA REPUBLIQUE",
+    "page": 87
+  },
+  {
+    "code": "169",
+    "libelle": "PROTECTION PRÉSIDENTIELLE INTÉGRITÉ DU TERRITOIRE",
+    "cp": "7 918 493",
+    "ae": "7 918 493",
+    "chapitre": "CHAPITRE 01 - PRESIDENCE DE LA REPUBLIQUE",
+    "page": 87
+  },
+  {
+    "code": "170",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DE LA PRESIDENCE DE LA REPUBLIQUE ET SES SERVICES RATTACHES",
+    "cp": "25 954 747",
+    "ae": "25 954 747",
+    "chapitre": "CHAPITRE 01 - PRESIDENCE DE LA REPUBLIQUE",
+    "page": 88
+  },
+  {
+    "code": "171",
+    "libelle": "FORMULATION ET COORDINATION DE L'ACTION PRESIDENTIELLE",
+    "cp": "1 117 729",
+    "ae": "1 117 729",
+    "chapitre": "CHAPITRE 01 - PRESIDENCE DE LA REPUBLIQUE",
+    "page": 88
+  },
+  {
+    "code": "172",
+    "libelle": "PROTECTION PRESIDENTIELLE INTEGRITE DU TERRITOIRE",
+    "cp": "6 942 271",
+    "ae": "6 942 271",
+    "chapitre": "CHAPITRE 01 - PRESIDENCE DE LA REPUBLIQUE",
+    "page": 88
+  },
+  {
+    "code": "174",
+    "libelle": "RENFORCEMENT DU CONTROLE PARLEMENTAIRE DE L'ACTION GOUVERNEMENTALE",
+    "cp": "11 140 000",
+    "ae": "11 140 000",
+    "chapitre": "CHAPITRE 01 - PRESIDENCE DE LA REPUBLIQUE",
+    "page": 88
+  },
+  {
+    "code": "175",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DES SERVICES DE L'ASSEMBLEE NATIONALE",
+    "cp": "18 482 000",
+    "ae": "18 482 000",
+    "chapitre": "CHAPITRE 01 - PRESIDENCE DE LA REPUBLIQUE",
+    "page": 88
+  },
+  {
+    "code": "010",
+    "libelle": "DIRECTION ET COORDINATION DE L'ACTION GOUVERNEMENTALE",
+    "cp": "2 589 380",
+    "ae": "2 589 380",
+    "chapitre": "CHAPITRE 01 - PRESIDENCE DE LA REPUBLIQUE",
+    "page": 88
+  },
+  {
+    "code": "011",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DES SERVICES INTERNES ET RATTACHES AUX SERVICES DU PREMIER MINISTRE",
+    "cp": "16 083 578",
+    "ae": "15 747 298",
+    "chapitre": "CHAPITRE 01 - PRESIDENCE DE LA REPUBLIQUE",
+    "page": 88
+  },
+  {
+    "code": "204",
+    "libelle": "COORDINATION STRATEGIQUE ET POLITIQUE",
+    "cp": "3 727 042",
+    "ae": "3 727 042",
+    "chapitre": "CHAPITRE 01 - PRESIDENCE DE LA REPUBLIQUE",
+    "page": 88
+  },
+  {
+    "code": "095",
+    "libelle": "CONSEIL DE L'EXÉCUTIF EN MATIÈRE ÉCONOMIQUE, SOCIALE, CULTURELLE ET ENVIRONNEMENTALE",
+    "cp": "80 000",
+    "ae": "80 000",
+    "chapitre": "CHAPITRE 06 - MINISTERE DES RELATIONS EXTERIEURES",
+    "page": 89
+  },
+  {
+    "code": "096",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU CONSEIL ECONOMIQUE ET SOCIAL",
+    "cp": "1 871 000",
+    "ae": "1 871 000",
+    "chapitre": "CHAPITRE 06 - MINISTERE DES RELATIONS EXTERIEURES",
+    "page": 89
+  },
+  {
+    "code": "087",
+    "libelle": "RENFORCEMENT DU POTENTIEL DES RELATIONS BILATÉRALES",
+    "cp": "17 972 274",
+    "ae": "17 972 274",
+    "chapitre": "CHAPITRE 06 - MINISTERE DES RELATIONS EXTERIEURES",
+    "page": 89
+  },
+  {
+    "code": "088",
+    "libelle": "NEGOCIATION, COORDINATION ET SUIVI DE LA COOPERATION MULTILATERALE, DECENTRALISEE, NON GOUVERNEMENTALE ET DES PROGRAMMES SUBSEQUENTS",
+    "cp": "4 451 122",
+    "ae": "4 451 122",
+    "chapitre": "CHAPITRE 06 - MINISTERE DES RELATIONS EXTERIEURES",
+    "page": 89
+  },
+  {
+    "code": "089",
+    "libelle": "GESTION DE LA DIASPORA, DES MIGRANTS ET DES CRISES NOUVELLES",
+    "cp": "6 138 762",
+    "ae": "6 138 762",
+    "chapitre": "CHAPITRE 06 - MINISTERE DES RELATIONS EXTERIEURES",
+    "page": 89
+  },
+  {
+    "code": "090",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DANS LE SOUS-SECTEUR RELATIONS EXTERIEURES",
+    "cp": "13 012 842",
+    "ae": "13 012 842",
+    "chapitre": "CHAPITRE 06 - MINISTERE DES RELATIONS EXTERIEURES",
+    "page": 89
+  },
+  {
+    "code": "161",
+    "libelle": "ADMINISTRATION DU TERRITOIRE",
+    "cp": "8 046 995",
+    "ae": "8 046 995",
+    "chapitre": "CHAPITRE 08 - MINISTERE DE LA JUSTICE",
+    "page": 90
+  },
+  {
+    "code": "162",
+    "libelle": "CONTRIBUTION A LA PROMOTION DES LIBERTES PUBLIQUES ET SECURITE DES PERSONNES ET DES BIENS",
+    "cp": "2 063 253",
+    "ae": "2 063 253",
+    "chapitre": "CHAPITRE 08 - MINISTERE DE LA JUSTICE",
+    "page": 90
+  },
+  {
+    "code": "163",
+    "libelle": "DEVELOPPEMENT DU DISPOSITIF NATIONAL DE PROTECTION CIVILE",
+    "cp": "2 452 100",
+    "ae": "2 452 100",
+    "chapitre": "CHAPITRE 08 - MINISTERE DE LA JUSTICE",
+    "page": 90
+  },
+  {
+    "code": "164",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DANS LE DOMAINE DE L'ADMINISTRATION DU TERRITOIRE",
+    "cp": "28 071 652",
+    "ae": "28 516 652",
+    "chapitre": "CHAPITRE 08 - MINISTERE DE LA JUSTICE",
+    "page": 90
+  },
+  {
+    "code": "050",
+    "libelle": "AMELIORATION DE L'ACTIVITE JURIDICTIONNELLE",
+    "cp": "34 428 434",
+    "ae": "31 508 434",
+    "chapitre": "CHAPITRE 08 - MINISTERE DE LA JUSTICE",
+    "page": 90
+  },
+  {
+    "code": "051",
+    "libelle": "AMELIORATION DE LA POLITIQUE PENITENTIAIRE",
+    "cp": "22 894 127",
+    "ae": "22 894 127",
+    "chapitre": "CHAPITRE 08 - MINISTERE DE LA JUSTICE",
+    "page": 90
+  },
+  {
+    "code": "052",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU SOUS-SECTEUR JUSTICE",
+    "cp": "11 985 439",
+    "ae": "11 985 439",
+    "chapitre": "CHAPITRE 08 - MINISTERE DE LA JUSTICE",
+    "page": 90
+  },
+  {
+    "code": "114",
+    "libelle": "CONTROLE DE LA TRANSPARENCE FINANCIERE DE LA GESTION BUDGETAIRE ET DE LA QUALITE DES COMPTES PUBLICS",
+    "cp": "890 185",
+    "ae": "890 185",
+    "chapitre": "CHAPITRE 08 - MINISTERE DE LA JUSTICE",
+    "page": 90
+  },
+  {
+    "code": "115",
+    "libelle": "GESTION DES CONTENTIEUX JUDICIAIRES ET ADMINISTRATIFS",
+    "cp": "471 000",
+    "ae": "471 000",
+    "chapitre": "CHAPITRE 08 - MINISTERE DE LA JUSTICE",
+    "page": 90
+  },
+  {
+    "code": "116",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DE LA COUR SUPREME",
+    "cp": "4 065 815",
+    "ae": "4 065 815",
+    "chapitre": "CHAPITRE 08 - MINISTERE DE LA JUSTICE",
+    "page": 90
+  },
+  {
+    "code": "027",
+    "libelle": "ADMINISTRATION DU SYSTEME DES MARCHES PUBLICS",
+    "cp": "2 577 800",
+    "ae": "2 577 800",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "028",
+    "libelle": "PROGRAMMATION ET SUIVI DES MARCHES PUBLICS",
+    "cp": "2 039 850",
+    "ae": "2 039 850",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "029",
+    "libelle": "CONTROLE EXTERNE DE L'EXECUTION DES MARCHES PUBLICS",
+    "cp": "1 865 452",
+    "ae": "1 865 452",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "030",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DANS LE SOUS-SECTEUR DES MARCHES PUBLICS",
+    "cp": "8 289 898",
+    "ae": "8 289 898",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "067",
+    "libelle": "RENFORCEMENT DE LA PREVENTION DES ATTEINTES A LA FORTUNE PUBLIQUE",
+    "cp": "949 000",
+    "ae": "949 000",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "076",
+    "libelle": "AUDITS, CONTROLE ET SANCTIONS",
+    "cp": "1 829 000",
+    "ae": "1 829 000",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "077",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DES SERVICES DU CONTROLE SUPERIEUR DE L'ETAT",
+    "cp": "3 349 000",
+    "ae": "3 349 000",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "062",
+    "libelle": "CONSOLIDATION DE LA SECURITE PUBLIQUE",
+    "cp": "21 215 035",
+    "ae": "21 215 035",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "063",
+    "libelle": "RENFORCEMENT DE LA SECURITE FRONTALIERE",
+    "cp": "4 285 300",
+    "ae": "4 285 300",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "064",
+    "libelle": "REDYNAMISATION DU SYSTEME DE RENSEIGNEMENT",
+    "cp": "6 131 410",
+    "ae": "6 131 410",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "065",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DE LA DGSN",
+    "cp": "73 484 255",
+    "ae": "73 484 255",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "001",
+    "libelle": "DEFENSE DE L'INTEGRITE DU TERRITOIRE NATIONAL",
+    "cp": "143 264 485",
+    "ae": "143 025 910",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 91
+  },
+  {
+    "code": "003",
+    "libelle": "PARTICIPATION A LA SÉCURITÉ DES PERSONNES, DES BIENS ET DE L'ENVIRONNEMENT",
+    "cp": "81 817 462",
+    "ae": "81 742 162",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "004",
+    "libelle": "ASSISTANCE, RECONVERSION ET RÉINSERTION DES ANCIENS COMBATTANTS ET VICTIMES DE GUERRE (ACVG)",
+    "cp": "41 676 514",
+    "ae": "41 676 514",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "005",
+    "libelle": "PARTICIPATION A L'ACTION NATIONALE DE DÉVELOPPEMENT",
+    "cp": "10 190 709",
+    "ae": "10 190 709",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "006",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU SOUS-SECTEUR DÉFENSE",
+    "cp": "47 388 830",
+    "ae": "47 388 830",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "148",
+    "libelle": "CONSERVATION DE LA CULTURE ET DE L'ART CAMEROUNAIS",
+    "cp": "1 568 000",
+    "ae": "1 568 000",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "149",
+    "libelle": "DÉVELOPPEMENT ET VALORISATION DE LA PRODUCTION DES BIENS ET SERVICES CULTURELS",
+    "cp": "1 944 400",
+    "ae": "1 944 400",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "182",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU MINISTÈRE DES ARTS ET DE LA CULTURE",
+    "cp": "2 845 600",
+    "ae": "2 845 600",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "101",
+    "libelle": "DÉVELOPPEMENT PRÉSCOLAIRE",
+    "cp": "21 542 903",
+    "ae": "21 542 903",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "102",
+    "libelle": "UNIVERSALISATION DU CYCLE PRIMAIRE",
+    "cp": "222 867 299",
+    "ae": "224 067 299",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "103",
+    "libelle": "ALPHABÉTISATION",
+    "cp": "4 638 881",
+    "ae": "4 638 881",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "104",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU SOUS-SECTEUR ÉDUCATION DE BASE",
+    "cp": "40 593 917",
+    "ae": "40 593 917",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "007",
+    "libelle": "DÉVELOPPEMENT DE L'EDUCATION PHYSIQUE",
+    "cp": "5 999 589",
+    "ae": "5 999 589",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 92
+  },
+  {
+    "code": "51 008",
+    "libelle": "DEVELOPPEMENT DU SPORT",
+    "cp": "11 959 800",
+    "ae": "11 959 800",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 93
+  },
+  {
+    "code": "52 009",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DANS LE SOUS-SECTEUR SPORT ET EDUCATION PHYSIQUE",
+    "cp": "6 839 611",
+    "ae": "6 839 611",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 93
+  },
+  {
+    "code": "53 013",
+    "libelle": "Accroissement de l'accès des populations aux contenus médiatiques",
+    "cp": "1 478 000",
+    "ae": "1 478 000",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 93
+  },
+  {
+    "code": "54 097",
+    "libelle": "Développement d'une communication multisectorielle axée sur la performance sociétale",
+    "cp": "1 635 000",
+    "ae": "1 635 000",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 93
+  },
+  {
+    "code": "55 160",
+    "libelle": "Gouvernance et appui institutionnel dans le sous-secteur de la communication",
+    "cp": "2 728 000",
+    "ae": "2 728 000",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 93
+  },
+  {
+    "code": "56 116",
+    "libelle": "DEVELOPPEMENT DE LA COMPOSANTE TECHNOLOGIQUE ET PROFESSIONNELLE DE L'ENSEIGNEMENT SUPERIEUR",
+    "cp": "17 807 587",
+    "ae": "17 807 587",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 93
+  },
+  {
+    "code": "57 117",
+    "libelle": "MODERNISATION ET PROFESSIONALISATION DES ETABLISSEMENTS FACULTAIRES CLASSIQUES",
+    "cp": "9 859 800",
+    "ae": "9 859 800",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 93
+  },
+  {
+    "code": "58 118",
+    "libelle": "DEVELOPPEMENT DE LA RECHERCHE ET DE L'INNOVATION UNIVERSITAIRE",
+    "cp": "22 504 941",
+    "ae": "22 504 941",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 93
+  },
+  {
+    "code": "119",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DANS LE SOUS SECTEUR ENSEIGNEMENT SUPERIEUR",
+    "cp": "29 912 672",
+    "ae": "29 912 672",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 94
+  },
+  {
+    "code": "136",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL AU SOUS-SECTEUR RECHERCHE ET INNOVATION",
+    "cp": "7 508 844",
+    "ae": "7 508 844",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 94
+  },
+  {
+    "code": "193",
+    "libelle": "DENSIFICATION DE LA RECHERCHE-DEVELOPPEMENT ET DE L'INNOVATION",
+    "cp": "7 362 156",
+    "ae": "7 362 156",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 94
+  },
+  {
+    "code": "031",
+    "libelle": "MOBILISATION DES RECETTES FISCALES INTERNES NON PETROLIERES",
+    "cp": "10 476 751",
+    "ae": "10 476 751",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 94
+  },
+  {
+    "code": "032",
+    "libelle": "GOUVERNANCE DOUANIERE, PROTECTION DE L'ESPACE ECONOMIQUE ET PARTICIPATION A LA SECURITE NATIONALE",
+    "cp": "11 225 686",
+    "ae": "11 225 686",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 94
+  },
+  {
+    "code": "033",
+    "libelle": "GESTION DU TRESOR PUBLIC ET SUIVI DU SECTEUR FINANCIER",
+    "cp": "12 770 828",
+    "ae": "12 770 828",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 94
+  },
+  {
+    "code": "034",
+    "libelle": "GESTION BUDGETAIRE DE L'ETAT",
+    "cp": "14 419 192",
+    "ae": "14 419 192",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 94
+  },
+  {
+    "code": "092",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL",
+    "cp": "17 470 544",
+    "ae": "17 470 544",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 94
+  },
+  {
+    "code": "015",
+    "libelle": "APPUI AU DEVELOPPEMENT DES EXPORTATIONS",
+    "cp": "498 458",
+    "ae": "498 458",
+    "chapitre": "CHAPITRE 11 - CONTROLE SUPERIEUR DE L'ETAT",
+    "page": 94
+  },
+  {
+    "code": "021",
+    "libelle": "REGULATION DU MARCHE INTERIEUR",
+    "cp": "3 800 047",
+    "ae": "3 800 047",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "025",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU MINCOMMERCE",
+    "cp": "3 913 209",
+    "ae": "3 913 209",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "152",
+    "libelle": "PROMOTION DE LA METROLOGIE, DE LA VEILLE NORMATIVE ENCADREMENT DU JUSTE PRIX",
+    "cp": "790 286",
+    "ae": "790 286",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "019",
+    "libelle": "PLANIFICATION STRATEGIQUE ET AMENAGEMENT DURABLE DU TERRITOIRE",
+    "cp": "45 585 022",
+    "ae": "46 588 022",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "022",
+    "libelle": "APPUI A LA TRANSFORMATION STRUCTURELLE POUR L'ACCELERATION DE LA CROISSANCE",
+    "cp": "12 489 584",
+    "ae": "12 489 584",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "023",
+    "libelle": "RENFORCEMENT DU PARTENARIAT AU DEVELOPPEMENT ET DE L'INTEGRATION REGIONALE",
+    "cp": "3 048 740",
+    "ae": "3 048 740",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "024",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU SOUS-SECTEUR DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "cp": "7 881 654",
+    "ae": "7 881 654",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "014",
+    "libelle": "PROMOTION DU TOURISME ET DES LOISIRS",
+    "cp": "1 384 098",
+    "ae": "1 384 098",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "150",
+    "libelle": "DIVERSIFICATION ET RENFORCEMENT DE L'OFFRE DU TOURISME ET DES LOISIRS",
+    "cp": "3 605 450",
+    "ae": "3 605 450",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "151",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DANS LE SOUS SECTEUR TOURISME ET LOISIRS",
+    "cp": "3 525 452",
+    "ae": "3 525 452",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "186",
+    "libelle": "RENFORCEMENT DE L'ACCES AUX ENSEIGNEMENTS SECONDAIRES",
+    "cp": "120 585 300",
+    "ae": "120 585 300",
+    "chapitre": "CHAPITRE 22 - MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "page": 95
+  },
+  {
+    "code": "036",
+    "libelle": "DEVELOPPEMENT ET DENSIFICATION DU TISSU INDUSTRIEL",
+    "cp": "1 090 000",
+    "ae": "1 090 000",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 98
+  },
+  {
+    "code": "037",
+    "libelle": "MODERNISATION DE L'INFRASTRUCTURE QUALITE",
+    "cp": "1 255 200",
+    "ae": "1 255 200",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 98
+  },
+  {
+    "code": "038",
+    "libelle": "DEVELOPPEMENT DES TECHNOLOGIES ET VALORISATION DES ACTIFS DE LA PROPRIETE INDUSTRIELLE",
+    "cp": "1 176 100",
+    "ae": "1 176 100",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 98
+  },
+  {
+    "code": "039",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DANS LE SOUS-SECTEUR MINES, INDUSTRIE ET DEVELOPPEMENT TECHNOLOGIQUE",
+    "cp": "3 571 700",
+    "ae": "3 571 700",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 98
+  },
+  {
+    "code": "184",
+    "libelle": "PRODUCTION PRODUCTIVE DES FILIERES AGRICOLES",
+    "cp": "56 030 542",
+    "ae": "56 030 542",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 98
+  },
+  {
+    "code": "185",
+    "libelle": "GESTION DURABLE DES SYSTEMES DE PRODUCTION AGRICOLE ET SECURITE ALIMENTAIRE",
+    "cp": "11 042 250",
+    "ae": "11 042 250",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 98
+  },
+  {
+    "code": "186",
+    "libelle": "DEVELOPPEMENT DES INFRASTRUCTURES AGRICOLES, RURALES ET MECANISATION AGRICOLE",
+    "cp": "28 886 092",
+    "ae": "28 886 092",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 98
+  },
+  {
+    "code": "187",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DANS LE SOUS SECTEUR AGRICULTURE ET DEVELOPPEMENT RURAL",
+    "cp": "17 142 147",
+    "ae": "17 142 147",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 98
+  },
+  {
+    "code": "053",
+    "libelle": "DEVELOPPEMENT DES PRODUCTIONS ET INDUSTRIES ANIMALES",
+    "cp": "38 050 692",
+    "ae": "38 050 692",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 98
+  },
+  {
+    "code": "054",
+    "libelle": "AMELIORATION DE LA COUVERTURE SANITAIRE DES CHEPTELS ET DE LA LUTTE CONTRE LES ZOONOSES",
+    "cp": "5 792 782",
+    "ae": "5 792 782",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 98
+  },
+  {
+    "code": "060",
+    "libelle": "Gouvernance et appui institutionnel dans le sous-secteur forêts et faune",
+    "cp": "10 030 313",
+    "ae": "10 030 313",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 100
+  },
+  {
+    "code": "120",
+    "libelle": "PROMOTION DE L'EMPLOI DÉCENT ET DE L'INSERTION PROFESSIONNELLE",
+    "cp": "2 915 350",
+    "ae": "2 915 350",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 100
+  },
+  {
+    "code": "121",
+    "libelle": "DÉVELOPPEMENT DES COMPÉTENCES",
+    "cp": "16 764 743",
+    "ae": "16 552 543",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 100
+  },
+  {
+    "code": "122",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DANS LE SOUS-SECTEUR DE L'EMPLOI ET DE LA FORMATION PROFESSIONNELLE",
+    "cp": "8 740 607",
+    "ae": "10 075 607",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 100
+  },
+  {
+    "code": "125",
+    "libelle": "CONSTRUCTION DES ROUTES ET AUTRES INFRASTRUCTURES",
+    "cp": "348 519 377",
+    "ae": "388 719 377",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 100
+  },
+  {
+    "code": "126",
+    "libelle": "RÉHABILITATION, MAINTENANCE ET ENTRETIEN DES ROUTES ET AUTRES INFRASTRUCTURES",
+    "cp": "204 373 626",
+    "ae": "238 758 626",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 100
+  },
+  {
+    "code": "127",
+    "libelle": "RÉALISATION DES ÉTUDES TECHNIQUES D'INFRASTRUCTURES",
+    "cp": "2 848 784",
+    "ae": "2 848 784",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 100
+  },
+  {
+    "code": "128",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL",
+    "cp": "13 418 213",
+    "ae": "13 418 213",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 100
+  },
+  {
+    "code": "026",
+    "libelle": "MODERNISATION DU CADASTRE",
+    "cp": "1 203 574",
+    "ae": "1 203 574",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 100
+  },
+  {
+    "code": "081",
+    "libelle": "PROTECTION ET DÉVELOPPEMENT DU PATRIMOINE DE L'ETAT",
+    "cp": "10 773 350",
+    "ae": "10 773 350",
+    "chapitre": "CHAPITRE 30 - MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "page": 100
+  },
+  {
+    "code": "066",
+    "libelle": "PROTECTION ET VALORISATION DES DOMAINES",
+    "cp": "1 394 887",
+    "ae": "1 394 887",
+    "chapitre": "CHAPITRE 38 - MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+    "page": 101
+  },
+  {
+    "code": "068",
+    "libelle": "OPTIMISATION DE LA GESTION DES AFFAIRES FONCIERES",
+    "cp": "1 143 650",
+    "ae": "1 143 650",
+    "chapitre": "CHAPITRE 38 - MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+    "page": 101
+  },
+  {
+    "code": "075",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU SOUS-SECTEUR DOMAINE, CADASTRE ET AFFAIRES FONCIERES",
+    "cp": "5 770 539",
+    "ae": "5 770 539",
+    "chapitre": "CHAPITRE 38 - MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+    "page": 101
+  },
+  {
+    "code": "108",
+    "libelle": "DEVELOPPEMENT DE L'HABITAT",
+    "cp": "35 300 002",
+    "ae": "35 300 002",
+    "chapitre": "CHAPITRE 38 - MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+    "page": 101
+  },
+  {
+    "code": "109",
+    "libelle": "AMELIORATION DE L'ENVIRONNEMENT SOCIAL URBAIN",
+    "cp": "2 410 387",
+    "ae": "2 410 387",
+    "chapitre": "CHAPITRE 38 - MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+    "page": 101
+  },
+  {
+    "code": "111",
+    "libelle": "DEVELOPPEMENT DES INFRASTRUCTURES DE TRANSPORT URBAIN ET DE MOBILITE DURABLE",
+    "cp": "103 296 840",
+    "ae": "103 296 840",
+    "chapitre": "CHAPITRE 38 - MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+    "page": 101
+  },
+  {
+    "code": "113",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU SOUS-SECTEUR URBAIN.",
+    "cp": "7 491 240",
+    "ae": "7 491 240",
+    "chapitre": "CHAPITRE 38 - MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+    "page": 101
+  },
+  {
+    "code": "043",
+    "libelle": "PROMOTION DE L'ENTREPRENEURIAT",
+    "cp": "2 909 562",
+    "ae": "2 909 562",
+    "chapitre": "CHAPITRE 38 - MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+    "page": 101
+  },
+  {
+    "code": "044",
+    "libelle": "TRANSFORMATION ET MODERNISATION DES UNITES DE PRODUCTION",
+    "cp": "3 230 400",
+    "ae": "3 230 400",
+    "chapitre": "CHAPITRE 38 - MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+    "page": 101
+  },
+  {
+    "code": "167",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU MINISTERE",
+    "cp": "5 610 038",
+    "ae": "5 915 435",
+    "chapitre": "CHAPITRE 38 - MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+    "page": 101
+  },
+  {
+    "code": "045",
+    "libelle": "PREVENTION DE LA MALADIE",
+    "cp": "50 819 637",
+    "ae": "50 819 637",
+    "chapitre": "CHAPITRE 41 - MINISTERE DU TRAVAIL ET DE LA SECURITE SOCIALE",
+    "page": 102
+  },
+  {
+    "code": "046",
+    "libelle": "PROMOTION DE LA SANTE ET NUTRITION",
+    "cp": "2 506 694",
+    "ae": "2 506 694",
+    "chapitre": "CHAPITRE 41 - MINISTERE DU TRAVAIL ET DE LA SECURITE SOCIALE",
+    "page": 102
+  },
+  {
+    "code": "047",
+    "libelle": "RENFORCEMENT DU SYSTEME DE SANTE",
+    "cp": "88 170 113",
+    "ae": "95 961 933",
+    "chapitre": "CHAPITRE 41 - MINISTERE DU TRAVAIL ET DE LA SECURITE SOCIALE",
+    "page": 102
+  },
+  {
+    "code": "048",
+    "libelle": "PRISE EN CHARGE DES CAS",
+    "cp": "59 811 306",
+    "ae": "59 811 306",
+    "chapitre": "CHAPITRE 41 - MINISTERE DU TRAVAIL ET DE LA SECURITE SOCIALE",
+    "page": 102
+  },
+  {
+    "code": "049",
+    "libelle": "GOUVERNANCE ET PILOTAGE STRATEGIQUE DU SYSTEME DE SANTE",
+    "cp": "53 973 250",
+    "ae": "53 973 250",
+    "chapitre": "CHAPITRE 41 - MINISTERE DU TRAVAIL ET DE LA SECURITE SOCIALE",
+    "page": 102
+  },
+  {
+    "code": "017",
+    "libelle": "PROMOTION DE LA SECURITE SOCIALE POUR TOUS",
+    "cp": "965 000",
+    "ae": "965 000",
+    "chapitre": "CHAPITRE 41 - MINISTERE DU TRAVAIL ET DE LA SECURITE SOCIALE",
+    "page": 102
+  },
+  {
+    "code": "018",
+    "libelle": "PROMOTION DU TRAVAIL DECENT",
+    "cp": "2 658 450",
+    "ae": "2 658 450",
+    "chapitre": "CHAPITRE 41 - MINISTERE DU TRAVAIL ET DE LA SECURITE SOCIALE",
+    "page": 102
+  },
+  {
+    "code": "159",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU SOUS SECTEUR TRAVAIL ET SECURITE SOCIALE",
+    "cp": "3 665 550",
+    "ae": "3 665 550",
+    "chapitre": "CHAPITRE 41 - MINISTERE DU TRAVAIL ET DE LA SECURITE SOCIALE",
+    "page": 102
+  },
+  {
+    "code": "070",
+    "libelle": "PROTECTION SOCIALE DE L'ENFANCE",
+    "cp": "3 058 050",
+    "ae": "3 058 050",
+    "chapitre": "CHAPITRE 41 - MINISTERE DU TRAVAIL ET DE LA SECURITE SOCIALE",
+    "page": 102
+  },
+  {
+    "code": "153",
+    "libelle": "DEVELOPPEMENT DES TRANSPORTS ROUTIERS, DE L’INTERMODALITE ET DE LA SECURITE ROUTIERE",
+    "cp": "6 382 500",
+    "ae": "6 382 500",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 104
+  },
+  {
+    "code": "154",
+    "libelle": "DEVELOPPEMENT DU TRANSPORT AERIEN ET REGULATION DE L’AVIATION CIVILE",
+    "cp": "916 500",
+    "ae": "916 500",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 104
+  },
+  {
+    "code": "155",
+    "libelle": "DEVELOPPEMENT DU TRANSPORT MARITIME, FLUVIAL, LACUSTRE ET DES ACTIVITES PORTUAIRES",
+    "cp": "82 850 000",
+    "ae": "82 850 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 104
+  },
+  {
+    "code": "156",
+    "libelle": "DEVELOPPEMENT DU TRANSPORT FERROVIAIRE",
+    "cp": "3 352 000",
+    "ae": "3 352 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 104
+  },
+  {
+    "code": "157",
+    "libelle": "DEVELOPPEMENT ET MODERNISATION DES SYSTEMES DE COLLECTE, DE PRODUCTION ET DE VULGARISATION DES INFORMATIONS METEOROLOGIQUES",
+    "cp": "944 500",
+    "ae": "944 500",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 104
+  },
+  {
+    "code": "158",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL AU SOUS-SECTEUR DES TRANSPORTS",
+    "cp": "2 998 500",
+    "ae": "2 998 500",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 104
+  },
+  {
+    "code": "082",
+    "libelle": "DESARMEMENT DES COMBATTANTS ET DEMOBILISATION",
+    "cp": "744 000",
+    "ae": "744 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 104
+  },
+  {
+    "code": "083",
+    "libelle": "REINTEGRATION DES EX-COMBATTANTS",
+    "cp": "772 000",
+    "ae": "772 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 104
+  },
+  {
+    "code": "180",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU CNDDR",
+    "cp": "2 551 000",
+    "ae": "2 551 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 104
+  },
+  {
+    "code": "074",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DU CONSEIL CONSTITUTIONNEL",
+    "cp": "3 944 000",
+    "ae": "3 944 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 104
+  },
+  {
+    "code": "040",
+    "libelle": "AMELIORATION DE LA GESTION DES RESSOURCES HUMAINES DE L'ETAT",
+    "cp": "5 973 118",
+    "ae": "5 973 118",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 105
+  },
+  {
+    "code": "041",
+    "libelle": "MODERNISATION DES SERVICES PUBLICS",
+    "cp": "3 894 183",
+    "ae": "3 894 183",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 105
+  },
+  {
+    "code": "042",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL AU MINFOPRA",
+    "cp": "5 225 699",
+    "ae": "5 225 699",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 105
+  },
+  {
+    "code": "081",
+    "libelle": "ORGANISATION, GESTION ET SUPERVISION DU SYSTÈME ÉLECTORAL ET RÉFÉRENDAIRE AU CAMEROUN",
+    "cp": "3 654 000",
+    "ae": "3 654 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 105
+  },
+  {
+    "code": "183",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL ELECAM",
+    "cp": "8 779 000",
+    "ae": "9 299 130",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 105
+  },
+  {
+    "code": "084",
+    "libelle": "PROMOTION DES DROITS DE L'HOMME",
+    "cp": "453 100",
+    "ae": "453 100",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 105
+  },
+  {
+    "code": "085",
+    "libelle": "PROTECTION DES DROITS DE L'HOMME",
+    "cp": "460 000",
+    "ae": "460 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 105
+  },
+  {
+    "code": "086",
+    "libelle": "PRÉVENTION DE LA TORTURE",
+    "cp": "357 900",
+    "ae": "357 900",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 105
+  },
+  {
+    "code": "190",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL",
+    "cp": "3 525 000",
+    "ae": "3 525 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 105
+  },
+  {
+    "code": "177",
+    "libelle": "CONTRIBUTION A LA CONSOLIDATION ET CONTRÔLE PARLEMENTAIRE DE L'ACTION GOUVERNEMENTALE",
+    "cp": "4 200 000",
+    "ae": "4 200 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 105
+  },
+  {
+    "code": "173",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DES SERVICES DU SENAT",
+    "cp": "11 962 000",
+    "ae": "11 962 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "174",
+    "libelle": "GOUVERNANCE ET APPUI INSTITUTIONNEL DE LA CNPBM",
+    "cp": "3 058 000",
+    "ae": "3 058 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "175",
+    "libelle": "PENSIONS",
+    "cp": "269 668 000",
+    "ae": "269 668 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "176",
+    "libelle": "REMBOURSEMENT DE LA DETTE PUBLIQUE EXTERIEURE",
+    "cp": "825 000 000",
+    "ae": "825 000 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "177",
+    "libelle": "REMBOURSEMENT DE LA DETTE PUBLIQUE INTERIEURE",
+    "cp": "947 300 000",
+    "ae": "947 300 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "178",
+    "libelle": "SUBVENTIONS ET CONTRIBUTIONS",
+    "cp": "445 896 000",
+    "ae": "445 896 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "179",
+    "libelle": "DEPENSES COMMUNES DE FONCTIONNEMENT",
+    "cp": "304 853 000",
+    "ae": "304 853 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "180",
+    "libelle": "PARTICIPATION DE L'ETAT DANS LES ENTREPRISES PARAPUBLIQUES ET PRIVEES",
+    "cp": "30 000 000",
+    "ae": "30 000 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "181",
+    "libelle": "REHABILITATION ET RESTRUCTURATION DES ENTREPRISES PUBLIQUES",
+    "cp": "10 000 000",
+    "ae": "10 000 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "182",
+    "libelle": "INTERVENTIONS EN INVESTISSEMENT",
+    "cp": "104 624 085",
+    "ae": "104 624 085",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "183",
+    "libelle": "PRISE EN CHARGE DES REPORTS DE CREDITS",
+    "cp": "7 000 000",
+    "ae": "7 000 000",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 106
+  },
+  {
+    "code": "01",
+    "libelle": "PRESIDENCE DE LA REPUBLIQUE",
+    "cp": "41 863",
+    "ae": "46 333",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "02",
+    "libelle": "SERVICES RATTACHES A LA PRESIDENCE",
+    "cp": "6 168",
+    "ae": "6 460",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "03",
+    "libelle": "ASSEMBLEE NATIONALE",
+    "cp": "18 482",
+    "ae": "18 482",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "04",
+    "libelle": "SERVICES DU PREMIER MINISTRE",
+    "cp": "13 760",
+    "ae": "15 200",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "05",
+    "libelle": "CONSEIL ECONOMIQUE ET SOCIAL",
+    "cp": "1 391",
+    "ae": "1 391",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "06",
+    "libelle": "MINISTERE DES RELATIONS EXTERIEURES",
+    "cp": "34 950",
+    "ae": "37 375",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "07",
+    "libelle": "MINISTERE DE L'ADMINISTRATION TERRITORIALE",
+    "cp": "37 664",
+    "ae": "37 824",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "08",
+    "libelle": "MINISTERE DE LA JUSTICE",
+    "cp": "61 592",
+    "ae": "63 188",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "09",
+    "libelle": "COUR SUPREME",
+    "cp": "2 922",
+    "ae": "3 227",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "10",
+    "libelle": "MINISTERE DES MARCHES PUBLICS",
+    "cp": "12 866",
+    "ae": "13 773",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "11",
+    "libelle": "CONTROLE SUPERIEUR DE L'ETAT",
+    "cp": "4 151",
+    "ae": "4 427",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "12",
+    "libelle": "DELEGATION GENERALE A LA SURETE NATIONALE",
+    "cp": "95 838",
+    "ae": "97 116",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "13",
+    "libelle": "MINISTERE DE LA DEFENSE",
+    "cp": "277 623",
+    "ae": "303 338",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "14",
+    "libelle": "MINISTERE DES ARTS ET DE LA CULTURE",
+    "cp": "4 472",
+    "ae": "5 258",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "15",
+    "libelle": "MINISTERE DE L'EDUCATION DE BASE",
+    "cp": "241 632",
+    "ae": "264 253",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "16",
+    "libelle": "MINISTERE DES SPORTS ET DE L'EDUCATION PHYSIQUE",
+    "cp": "22 505",
+    "ae": "22 989",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "17",
+    "libelle": "MINISTERE DE LA COMMUNICATION",
+    "cp": "4 330",
+    "ae": "5 241",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "18",
+    "libelle": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR",
+    "cp": "65 463",
+    "ae": "70 085",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "19",
+    "libelle": "MINISTERE DE LA RECHERCHE SCIENTIFIQUE ET DE L'INNOVATION",
+    "cp": "11 517",
+    "ae": "12 146",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "20",
+    "libelle": "MINISTERE DES FINANCES",
+    "cp": "59 320",
+    "ae": "61 813",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "21",
+    "libelle": "MINISTERE DU COMMERCE",
+    "cp": "7 152",
+    "ae": "7 972",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "22",
+    "libelle": "MINISTERE DE L'ECONOMIE, DE LA PLANIFICATION ET DE L'AMENAGEMENT DU TERRITOIRE",
+    "cp": "26 234",
+    "ae": "30 825",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "23",
+    "libelle": "MINISTERE DU TOURISME ET DES LOISIRS",
+    "cp": "4 025",
+    "ae": "4 315",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "25",
+    "libelle": "MINISTERE DES ENSEIGNEMENTS SECONDAIRES",
+    "cp": "468 599",
+    "ae": "524 877",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "26",
+    "libelle": "MINISTERE DE LA JEUNESSE ET DE L'EDUCATION CIVIQUE",
+    "cp": "18 241",
+    "ae": "19 156",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "27",
+    "libelle": "MINISTERE DE LA DECENTRALISATION ET DU DEVELOPPEMENT LOCAL",
+    "cp": "7 119",
+    "ae": "27 074",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "28",
+    "libelle": "MINISTERE DE L'ENVIRONNEMENT, DE LA PROTECTION DE LA NATURE ET DU DEVELOPPEMENT DURABLE",
+    "cp": "4 992",
+    "ae": "6 621",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "29",
+    "libelle": "MINISTERE DES MINES, DE L'INDUSTRIE ET DU DEVELOPPEMENT TECHNOLOGIQUE",
+    "cp": "5 805",
+    "ae": "7 197",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "30",
+    "libelle": "MINISTERE DE L'AGRICULTURE ET DU DEVELOPPEMENT RURAL",
+    "cp": "66 757",
+    "ae": "61 732",
+    "chapitre": "CHAPITRE 46 - MINISTERE DES TRANSPORTS",
+    "page": 107
+  },
+  {
+    "code": "016",
+    "libelle": "OFFRE D'ENERGIE",
+    "cp": "1 607 916",
+    "ae": "1 607 916",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 109
+  },
+  {
+    "code": "137",
+    "libelle": "ACCES A L'ENERGIE",
+    "cp": "13 392 084",
+    "ae": "13 392 084",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 109
+  },
+  {
+    "code": "129",
+    "libelle": "DENSIFICATION DU RESEAU ET AMELIORATION DE LA COUVERTURE POSTALE NATIONALE",
+    "cp": "900 000",
+    "ae": "900 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 109
+  },
+  {
+    "code": "132",
+    "libelle": "SECURISATION DE L'ECOSYSTEME NATIONAL DU NUMERIQUE",
+    "cp": "1 500 000",
+    "ae": "1 500 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 109
+  },
+  {
+    "code": "148",
+    "libelle": "CONSERVATION DE LA CULTURE ET DE L'ART CAMEROUNAIS",
+    "cp": "40 000",
+    "ae": "40 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 109
+  },
+  {
+    "code": "149",
+    "libelle": "DEVELOPPEMENT ET VALORISATION DE LA PRODUCTION DES BIENS ET SERVICES CULTURELS",
+    "cp": "260 000",
+    "ae": "260 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 109
+  },
+  {
+    "code": "138",
+    "libelle": "ACCES A L'EAU POTABLE ET L'ASSAINISSEMENT LIQUIDE",
+    "cp": "900 000",
+    "ae": "900 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 109
+  },
+  {
+    "code": "002",
+    "libelle": "CHANGEMENTS CLIMATIQUES, DESERTIFICATION ET SECHERESSE",
+    "cp": "631 000",
+    "ae": "631 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 110
+  },
+  {
+    "code": "091",
+    "libelle": "DEVELOPPEMENT DURABLE",
+    "cp": "869 000",
+    "ae": "869 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 110
+  },
+  {
+    "code": "054",
+    "libelle": "AMENAGEMENT ET RENOUVELLEMENT DE LA RESSOURCE FORESTIERE",
+    "cp": "2 300 000",
+    "ae": "2 300 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 110
+  },
+  {
+    "code": "058",
+    "libelle": "VALORISATION DES RESSOURCES FORESTIERES LIGNEUSES ET NON LIGNEUSES",
+    "cp": "700 000",
+    "ae": "700 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 110
+  },
+  {
+    "code": "056",
+    "libelle": "SECURISATION ET VALORISATION DES RESSOURCES FAUNIQUES ET DES AIRES PROTEGEES",
+    "cp": "500 000",
+    "ae": "500 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 110
+  },
+  {
+    "code": "153",
+    "libelle": "DEVELOPPEMENT DES TRANSPORTS ROUTIERS, DE L'INTERMODALITE ET DE LA SECURITE ROUTIERE",
+    "cp": "2 942 400",
+    "ae": "2 942 400",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 110
+  },
+  {
+    "code": "155",
+    "libelle": "DEVELOPPEMENT DU TRANSPORT MARITIME, FLUVIAL, LACUSTRE ET DES ACTIVITES PORTUAIRES",
+    "cp": "3 057 600",
+    "ae": "3 057 600",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 110
+  },
+  {
+    "code": "014",
+    "libelle": "PROMOTION DU TOURISME ET DES LOISIRS",
+    "cp": "1 000 000",
+    "ae": "1 000 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 110
+  },
+  {
+    "code": "800",
+    "libelle": "RECONSTRUCTION ET DEVELOPPEMENT DES REGIONS DE L'EXTREME-NORD, NORD et NORD-OUEST",
+    "cp": "30 000 000",
+    "ae": "30 000 000",
+    "chapitre": "CHAPITRE DEUXIÈME",
+    "page": 110
+  }
+]

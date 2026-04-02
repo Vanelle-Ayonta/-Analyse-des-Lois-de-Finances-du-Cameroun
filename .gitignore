@@ -1,0 +1,52 @@
+# Secrets
+.env
+.streamlit/config.toml
+
+# Fichiers volumineux
+*.pdf
+modele/                # Modèles HuggingFace mis en cache localement
+tmp_uploaded_*.pdf     # PDFs temporaires uploadés via Streamlit
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Outils
+.DS_Store
+Thumbs.db
+.venv/
+venv/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Modèles ML locaux
+modele/
+modeles/
+models/
+*.pt
+*.pth
+*.bin
+*.onnx
+*.h5
+*.keras
+
+# Dossiers de modèles Hugging Face / SentenceTransformers
+transformers/
+sentence_transformers/
+hub/
+cache/
+
+# Fichiers de cache des modèles
+*.safetensors
+*.msgpack
+*.h5
+*.pickle
+*.joblib

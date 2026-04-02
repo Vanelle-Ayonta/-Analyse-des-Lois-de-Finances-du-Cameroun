@@ -1,0 +1,1290 @@
+from extracteur_texte import *
+
+from dotenv import load_dotenv
+load_dotenv()
+"""
+
+# Chemin vers le fichier PDF
+chemin_fichier = "LOI DES FINANCES 2023-2024.pdf"
+
+try:
+    # Extraction des articles
+    articles = extraire_articles_loi_finances(chemin_fichier)
+    
+    # Affichage des statistiques
+    print("\n" + "=" * 70)
+    print("RÉSUMÉ DE L'EXTRACTION")
+    print("=" * 70)
+    print(f"Nombre total d'articles extraits : {len(articles)}")
+    
+    # Affichage d'un exemple d'article
+    if articles:
+        print("\n" + "-" * 70)
+        print("EXEMPLE - Premier article extrait:")
+        print("-" * 70)
+        print(f"Chapitre : {articles[0]['chapitre_numero']}")
+        print(f"Titre    : {articles[0]['chapitre_titre']}")
+        print(f"\nTexte :\n{articles[0]['texte_complet'][:300]}...")
+    
+    # Groupement par chapitre pour statistiques
+    chapitres = {}
+    for art in articles:
+        chap = art['chapitre_numero']
+        if chap not in chapitres:
+            chapitres[chap] = 0
+        chapitres[chap] += 1
+    
+    print("\n" + "-" * 70)
+    print("RÉPARTITION PAR CHAPITRE")
+    print("-" * 70)
+    for chap, count in list(chapitres.items())[:5]:  # Afficher les 5 premiers
+        print(f"{chap}: {count} article(s)")
+    if len(chapitres) > 5:
+        print(f"... et {len(chapitres) - 5} autres chapitres")
+    
+except FileNotFoundError:
+    print(f"❌ Erreur : Le fichier '{chemin_fichier}' n'a pas été trouvé.")
+except Exception as e:
+    print(f"❌ Erreur lors de l'extraction : {e}")
+    
+        
+       """ 
+        
+# articles
+
+import json
+import pandas as pd
+with open('articles_extract_2023_2024.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+data_1 = pd.DataFrame(data)
+
+with open('articles_extract_2024_2025.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+data_2 = pd.DataFrame(data)
+
+data_2
+data_2.texte_complet.str.lower().str.startswith("article").value_counts()
+from extraire_ligne_budgetaire_info import *
+#   extraire_ligne_par_page(pdf_path = "LOI DES FINANCES 2023-2024.pdf", json_output_name = 'budget_extract_1.json')
+## load budjet json in a dataframe
+import json
+import pandas as pd
+with open('budget_extract_2024_2025.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+
+budget_df_2 = pd.DataFrame(data)
+with open('budget_extract_2023_2024.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+budget_df_1 = pd.DataFrame(data)
+
+
+budget_df_2
+budget_df_1
+
+data_1.texte_complet.str.len().plot.hist(figsize=(18,5), bins=50)
+
+data_2.texte_complet.str.len().plot.hist(figsize=(18,5), bins=50)
+
+article_2025 = data_1.texte_complet.str.lower().tolist()
+article_2024 = data_2.texte_complet.str.lower().tolist()
+
+
+
+import unicodedata
+
+def pretraiter_texte_loi_finances(texte_brut):
+    """
+    Nettoyage expert pour les articles de Loi de Finances (Cameroun).
+    Traite : Bruit OCR sévère, tampons, puces de remplissage et en-têtes.
+    Preserve : Chiffres, taux, dates et mots clés juridiques.
+    """
+    if not texte_brut or not isinstance(texte_brut, str):
+        return ""
+
+    # 1. Normalisation Unicode (Gère les variantes de points/puces comme •, ·, .)
+    texte = unicodedata.normalize('NFKC', texte_brut)
+    texte = texte.lower()
+    
+    # 2. Reconstruction linéaire (Supprime les sauts de ligne pour recoller les phrases)
+    texte = texte.replace('\n', ' ')
+
+    # --- ZONE A : FILTRES ADMINISTRATIFS & TAMPONS (Sources 2, 54, 276, 320) ---
+    patterns_bruit = [
+        r"p\s*r\s*e\s*s\s*i\s*d\s*e\s*n\s*c\s*e", # PRESIDENCE "éclaté"
+        r"r\s*e\s*p\s*u\s*b\s*l\s*i\s*q\s*u\s*e", # REPUBLIQUE
+        r"s\s*e\s*c\s*r\s*e\s*t\s*a\s*r\s*i\s*a\s*t", # SECRETARIAT
+        r"service du fichier", 
+        r"legislative and statutory",
+        r"certified true copy",
+        r"copie certifiee conforme",
+        r"er\s*-\s*tif\s*-\s*ie", # "certifie" cassé (Source 38)
+        r"rl\s*i\s*fied\s*true\s*y", # "certified true copy" cassé
+        r"y\s*affa\s*irs", # "affairs" cassé
+        r"yaounde.*?biya", # Signature (Source 78)
+        r"le reste sans changement" # (Source 16)
+    ]
+    
+    for pat in patterns_bruit:
+        texte = re.sub(pat, " ", texte, flags=re.IGNORECASE)
+
+    # --- ZONE B : NETTOYAGE VISUEL & OCR (Sources 23, 40) ---
+    
+    # 1. Suppression des séries de puces/points indiquant "pas de changement"
+    # Cible : ........, ••••••••, ········ (plus de 2 occurrences)
+    texte = re.sub(r"(?:[\.•·-]\s*){3,}", " ", texte)
+
+    # 2. Suppression du "charabia" OCR (Backslashes, chevrons, suites de ponctuation)
+    # Ex: \ 11 \.., l l. (Source 40)
+    texte = re.sub(r'[\\\/_<>«»|]{2,}', ' ', texte) # Symboles répétés
+    texte = re.sub(r'\\[\w\.]+', ' ', texte)       # Mots commençant par backslash
+
+    # 3. Suppression du préfixe "Article X" (On garde le fond du texte)
+    # Ex: "Article 93 quater.-" -> Supprimé
+    pattern_article = r"^article\s+(?:\d+|[a-z]+)(?:\s+(?:bis|ter|quater|quinquies))?[\s\.\-]+(?:\(\d+\))?"
+    texte = re.sub(pattern_article, " ", texte).strip()
+
+    # --- ZONE C : NETTOYAGE DES MOTS PARASITES ---
+    
+    # Liste des mots courts valides à conserver (Stopwords utiles pour le sens)
+    mots_courts_gardes = {
+        "a", "à", "y", "et", "ou", "au", "du", "en", "un", "le", "la", "de", "ne", "ni", "se", "ce", "il", "on"
+    }
+    
+    mots = texte.split()
+    mots_propres = []
+    
+    for mot in mots:
+        # Nettoyage ponctuation collée
+        mot_clean = mot.strip(".,;:-'\"")
+        
+        # 1. Si c'est un chiffre ou contient un chiffre (ex: "1er", "5%"), ON GARDE
+        if any(c.isdigit() for c in mot_clean):
+            mots_propres.append(mot_clean)
+            continue
+            
+        # 2. Si le mot est assez long (>2 lettres), ON GARDE
+        if len(mot_clean) > 2:
+            # Filtre supplémentaire anti-bruit (ex: "rvice" ou "co")
+            if mot_clean not in ["rvice", "ncy", "secr"]: 
+                mots_propres.append(mot_clean)
+                
+        # 3. Si c'est un mot court valide, ON GARDE
+        elif mot_clean in mots_courts_gardes:
+            mots_propres.append(mot_clean)
+            
+        # Sinon (lettres isolées w, c, m, r...), on jette.
+
+    # Reconstitution finale
+    return " ".join(mots_propres)
+
+
+s_2025 = [pretraiter_texte_loi_finances(i) for i in article_2025]
+
+s_2024 = [pretraiter_texte_loi_finances(i) for i in article_2024]
+
+
+print(len(s_2025))
+print(len(s_2024))
+s_2025
+s_2024
+
+
+from sentence_transformers import SentenceTransformer, util
+import numpy as np
+import pandas as pd
+
+def audit_semantique_lois_v2(articles_2024, articles_2025):
+    """
+    Audit sémantique avec SentenceTransformer (BiEncoder CamemBERT)
+    Retourne: similarités, ruptures et évolutions thématiques
+    """
+    # Chargement du modèle
+    print("📥 Chargement modèle BiEncoder CamemBERT...")
+    model = SentenceTransformer("antoinelouis/biencoder-camembert-base-mmarcoFR")
+    
+    # Calcul des embeddings (vectorisation en batch = plus rapide)
+    print("🔍 Encodage des articles 2024...")
+    emb_2024 = model.encode(articles_2024, show_progress_bar=True, convert_to_tensor=True)
+    
+    print("🔍 Encodage des articles 2025...")
+    emb_2025 = model.encode(articles_2025, show_progress_bar=True, convert_to_tensor=True)
+    
+    # Matrice de similarité cosinus (optimisée GPU si disponible)
+    print("📊 Calcul matrice de similarité...")
+    similarity_matrix = util.cos_sim(emb_2024, emb_2025)
+    
+    # Extraction des paires les plus similaires/divergentes
+    resultats = []
+    for i in range(len(articles_2024)):
+        for j in range(len(articles_2025)):
+            sim = similarity_matrix[i][j].item()
+            resultats.append({
+                'idx_2024': i,
+                'idx_2025': j,
+                'similarite': sim,
+                'article_2024': articles_2024[i][:150],
+                'article_2025': articles_2025[j][:150]
+            })
+    
+    # Tri et analyse
+    resultats.sort(key=lambda x: x['similarite'], reverse=True)
+    
+    return {
+        'top_10_similaires': resultats,
+        'top_10_ruptures': resultats,
+        'score_moyen': np.mean([r['similarite'] for r in resultats]),
+        'matrice_complete': similarity_matrix.cpu().numpy()
+    }
+
+
+# Utilisation
+resultat_v2 = audit_semantique_lois_v2(s_2024, s_2025)
+print(f"📊 Similarité moyenne: {resultat_v2['score_moyen']:.3f}")
+print(f"⚠️ Ruptures détectées: {len(resultat_v2['top_10_ruptures'])}")
+
+
+
+
+data_2['similarite_max_artice']  = resultat_v2['matrice_complete'].max(axis=1) 
+data_2['source'] = '2024-2025'
+
+data_1['similarite_max_artice']  = resultat_v2['matrice_complete'].max(axis=0) 
+data_1['source'] = '2023-2024'
+
+data_1 = data_1[['texte_complet', 'similarite_max_artice', 'source']]
+data_2 = data_2[['texte_complet', 'similarite_max_artice', 'source']]
+
+data = pd.concat([data_1, data_2], ignore_index=True)
+
+import pandas as pd
+import plotly.graph_objects as go
+
+# --- Préparation du DataFrame (sécurité) ---
+df = data.copy()
+
+# Détecter la colonne de similarité (adapter si noms différents)
+possible_sim_cols = ['similarite', 'similarity', 'similarite_max_artice', 'similarite_max_article']
+sim_col = next((c for c in possible_sim_cols if c in df.columns), None)
+if sim_col is None:
+    raise ValueError(f"Aucune colonne de similarité trouvée. Cherche parmi : {possible_sim_cols}")
+
+# Colonne source (période)
+source_col = 'source' if 'source' in df.columns else next((c for c in df.columns if 'annee' in c.lower() or 'year' in c.lower()), None)
+if source_col is None:
+    df['source'] = 'unknown'
+    source_col = 'source'
+
+# S'assurer que la similarité est numérique et bornée entre 0 et 1
+df[sim_col] = pd.to_numeric(df[sim_col], errors='coerce').fillna(0.0)
+df[sim_col] = df[sim_col].clip(lower=0.0, upper=1.0)
+
+# --- Palette (automatique selon les sources présentes) ---
+unique_sources = df[source_col].astype(str).unique().tolist()
+base_colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"]
+color_map = {s: base_colors[i % len(base_colors)] for i, s in enumerate(unique_sources)}
+
+# --- Construction du graphique : histogrammes superposés ---
+traces = []
+for source in unique_sources:
+    subset = df[df[source_col].astype(str) == str(source)]
+    traces.append(
+        go.Histogram(
+            x=subset[sim_col],
+            name=str(source),
+            marker=dict(color=color_map.get(source)),
+            opacity=0.6,
+            nbinsx=50,            
+            histnorm=None         # None pour comptages bruts ; 'probability' pour densité
+        )
+    )
+
+fig = go.Figure(data=traces)
+
+# --- Mise en forme simple et lisible ---
+fig.update_layout(
+    title="Distribution des scores de similarité par source",
+    xaxis=dict(title="Score de similarité (cosinus)", range=[0, 1], tickformat=".2f"),
+    yaxis=dict(title="Nombre d'articles"),
+    barmode='overlay',            # superposition des histogrammes
+    template='plotly_white',
+    legend=dict(title="Source", orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60, r=40, t=80, b=60),
+    height=560,
+    font=dict(family="DejaVu Sans", size=12)
+)
+
+# Optionnel : ajouter une ligne verticale pour un seuil visuel (ex. 0.4)
+seuil = 0.4
+fig.add_vline(x=seuil, line=dict(color="gray", width=1, dash="dash"), annotation_text=f"seuil {seuil}", annotation_position="top right")
+
+# Afficher inline (Jupyter) ou ouvrir dans un navigateur local
+fig.show()
+
+
+
+
+import pandas as pd
+import plotly.graph_objects as go
+
+# --- Copie de sécurité ---
+df = data.copy()
+
+# --- Détection de la colonne de similarité ---
+possible_sim_cols = ['similarite', 'similarity', 'similarite_max_artice', 'similarite_max_article']
+sim_col = next((c for c in possible_sim_cols if c in df.columns), None)
+if sim_col is None:
+    raise ValueError(f"Aucune colonne de similarité trouvée. Cherche parmi : {possible_sim_cols}")
+
+# --- Détection de la colonne source ---
+source_col = 'source' if 'source' in df.columns else next((c for c in df.columns if 'annee' in c.lower() or 'year' in c.lower()), None)
+if source_col is None:
+    df['source'] = 'unknown'
+    source_col = 'source'
+
+# --- Nettoyage minimal ---
+df[sim_col] = pd.to_numeric(df[sim_col], errors='coerce').fillna(0.0).clip(0.0, 1.0)
+df[source_col] = df[source_col].astype(str)
+
+# --- Palette automatique selon les sources présentes ---
+unique_sources = df[source_col].unique().tolist()
+base_colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]
+color_map = {s: base_colors[i % len(base_colors)] for i, s in enumerate(unique_sources)}
+
+# --- Traces boxplot : une trace par source ---
+traces = []
+for src in unique_sources:
+    subset = df[df[source_col] == src]
+    traces.append(
+        go.Box(
+            y=subset[sim_col],
+            name=str(src),
+            marker_color=color_map.get(src),
+            boxmean='sd',            # affiche la moyenne et l'écart-type
+            jitter=0.3,              # dispersion des points individuels
+            pointpos=-1.8,           # position des points individuels
+            boxpoints='outliers',    # affiche uniquement les outliers
+            hovertemplate="Source: %{name}<br>Score: %{y:.3f}<extra></extra>"
+        )
+    )
+
+fig = go.Figure(data=traces)
+
+# --- Mise en forme ---
+fig.update_layout(
+    title=dict(text="Boxplots des scores de similarité par source", x=0.5, xanchor='center', font=dict(size=16)),
+    yaxis=dict(title="Score de similarité (cosinus)", range=[0, 1], tickformat=".2f"),
+    xaxis=dict(title="Source"),
+    template="plotly_white",
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60, r=40, t=90, b=60),
+    height=480,
+    font=dict(family="DejaVu Sans", size=12)
+)
+
+# --- Affichage inline (Jupyter) ---
+fig.show()
+
+
+
+from sklearn.mixture import GaussianMixture
+
+def seuil_gmm(similarites):
+    """GMM à 2 composantes"""
+    gmm = GaussianMixture(n_components=2, random_state=42)
+    gmm.fit(similarites.reshape(-1, 1))
+    
+    # Moyennes des 2 clusters
+    mu1, mu2 = sorted(gmm.means_.flatten())
+    sigma1 = np.sqrt(gmm.covariances_[0][0][0])
+    sigma2 = np.sqrt(gmm.covariances_[1][0][0])
+    
+    # Seuil = intersection des gaussiennes
+    seuil = (mu1 + mu2) / 2
+    return seuil
+
+seuil = seuil_gmm(data[data.source =='2024-2025'].similarite_max_artice.values)
+
+seuil
+
+
+import numpy as np
+
+def trouver_seuil_optimal(data, col_similarite='similarite_max_artice', seuils=None):
+    """
+    Trouve le seuil optimal de similarité
+    
+    Args:
+        data: DataFrame avec similarités et labels (si disponibles)
+        col_similarite: Nom colonne des scores
+        seuils: Liste de seuils à tester (None = auto)
+    
+    Returns:
+        dict avec seuil optimal et métriques
+    """
+    similarites = data[col_similarite].values
+    
+    # Générer seuils à tester
+    if seuils is None:
+        seuils = np.arange(0, 1.0, 0.05)
+    
+    
+    
+    # Méthode 2: Méthode du coude (Elbow) - non supervisé
+    coudes = []
+    for seuil in seuils:
+        similaires = (similarites >= seuil).sum()
+        coudes.append({'seuil': seuil, 'nb_similaires': similaires})
+    
+    # Trouver le point d'inflexion (max de dérivée seconde)
+    nb_sim = [c['nb_similaires'] for c in coudes]
+    derivee_2 = np.diff(np.diff(nb_sim))
+    idx_optimal = np.argmax(np.abs(derivee_2)) + 1
+    
+    return {
+        'seuil_optimal': seuils[idx_optimal],
+        'distribution': coudes
+    }
+
+# Utilisation
+resultat = trouver_seuil_optimal(data)
+print(f"Seuil optimal: {resultat['seuil_optimal']:.2f}")
+
+
+
+pd.DataFrame(resultat['distribution']).plot.line(x='seuil',y='nb_similaires',figsize=(30,9))
+# Piecharts des ruptures — utilise uniquement le DataFrame `data`
+# Requis : pandas, plotly
+import numpy as np
+import pandas as pd
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# Seuil à utiliser
+SEUIL = 0.45
+
+# --- Vérifications et préparation ---
+if 'data' not in globals():
+    raise RuntimeError("Le DataFrame `data` n'est pas défini dans l'environnement.")
+
+df = data.copy()
+
+# Détecter la colonne de similarité parmi plusieurs noms possibles
+possible_sim_cols = ['similarite', 'similarity', 'similarite_max_artice', 'similarite_max_article', 'similarite_max_article']
+sim_col = next((c for c in possible_sim_cols if c in df.columns), None)
+if sim_col is None:
+    raise ValueError(f"Aucune colonne de similarité trouvée. Cherche parmi : {possible_sim_cols}")
+
+# Détecter la colonne source (période/année)
+source_col = 'source' if 'source' in df.columns else next((c for c in df.columns if 'annee' in c.lower() or 'year' in c.lower()), None)
+if source_col is None:
+    # si aucune colonne source, on crée une source unique
+    df['source'] = 'unknown'
+    source_col = 'source'
+
+# Nettoyage minimal : convertir similarité en numérique et clipper entre 0 et 1
+df[sim_col] = pd.to_numeric(df[sim_col], errors='coerce').fillna(0.0).clip(0.0, 1.0)
+df[source_col] = df[source_col].astype(str)
+
+# Choisir les deux sources à afficher
+unique_sources = df[source_col].unique().tolist()
+if len(unique_sources) == 0:
+    raise RuntimeError("Aucune source détectée dans le DataFrame.")
+elif len(unique_sources) == 1:
+    sources_to_plot = [unique_sources[0], unique_sources[0]]
+else:
+    # si plus de deux sources, on prend les deux premières (ordre d'apparition)
+    sources_to_plot = unique_sources[:2]
+
+src_a, src_b = sources_to_plot[0], sources_to_plot[1]
+
+# --- Calcul des ruptures (meilleur score par article non nécessaire ici) ---
+# On considère rupture si la valeur de similarité (colonne détectée) < SEUIL
+# Si ton DataFrame contient déjà le "meilleur score" par article, on l'utilise directement.
+# Sinon on applique la condition sur la colonne détectée.
+rupt_a_mask = df[df[source_col] == src_a][sim_col] < SEUIL
+rupt_b_mask = df[df[source_col] == src_b][sim_col] < SEUIL
+
+count_a_total = int((df[source_col] == src_a).sum())
+count_b_total = int((df[source_col] == src_b).sum())
+count_a_rupt = int(rupt_a_mask.sum())
+count_b_rupt = int(rupt_b_mask.sum())
+count_a_ok = count_a_total - count_a_rupt
+count_b_ok = count_b_total - count_b_rupt
+
+# --- Préparer labels et valeurs ---
+labels = [f"Rupture (< {SEUIL:.2f})", f"Correspondance (≥ {SEUIL:.2f})"]
+values_a = [count_a_rupt, count_a_ok]
+values_b = [count_b_rupt, count_b_ok]
+
+# --- Construire les pie charts côte à côte ---
+fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]],
+                    subplot_titles=(f"{src_a} (n={count_a_total})", f"{src_b} (n={count_b_total})"))
+
+colors = ['#d62728', '#2ca02c']  # rouge = rupture, vert = ok
+
+fig.add_trace(go.Pie(labels=labels, values=values_a, name=str(src_a),
+                     marker=dict(colors=colors), hole=0.35, sort=False,
+                     textinfo='percent+label', hovertemplate="%{label}: %{value} (%{percent})<extra></extra>"),
+              row=1, col=1)
+
+fig.add_trace(go.Pie(labels=labels, values=values_b, name=str(src_b),
+                     marker=dict(colors=colors), hole=0.35, sort=False,
+                     textinfo='percent+label', hovertemplate="%{label}: %{value} (%{percent})<extra></extra>"),
+              row=1, col=2)
+
+fig.update_layout(
+    title_text=f"Répartition des ruptures (seuil = {SEUIL:.2f}) — comparaison {src_a} vs {src_b}",
+    template='plotly_white',
+    legend=dict(orientation='h', yanchor='bottom', y=-0.12, xanchor='center', x=0.5),
+    height=570,
+    margin=dict(l=40, r=40, t=90, b=40)
+)
+
+# Afficher la figure interactive
+fig.show()
+
+# --- Impression des chiffres pour vérification ---
+print(f"{src_a} : total = {count_a_total} | ruptures = {count_a_rupt} | part = {(count_a_rupt/count_a_total*100) if count_a_total else 0:.1f}%")
+print(f"{src_b} : total = {count_b_total} | ruptures = {count_b_rupt} | part = {(count_b_rupt/count_b_total*100) if count_b_total else 0:.1f}%")
+
+
+# Extrait les articles en rupture dans le DataFrame `data` (seuil = 0.45)
+import pandas as pd
+import numpy as np
+
+SEUIL = 0.45
+
+
+df = data.copy()
+
+# Détecter la colonne de similarité
+possible_sim_cols = ['similarite', 'similarity', 'similarite_max_artice', 'similarite_max_article', 'similarite_max_article']
+sim_col = next((c for c in possible_sim_cols if c in df.columns), None)
+if sim_col is None:
+    raise ValueError(f"Aucune colonne de similarité trouvée. Cherche parmi : {possible_sim_cols}")
+
+# Détecter colonne texte et colonne source
+text_col = 'texte_complet' if 'texte_complet' in df.columns else next((c for c in df.columns if 'texte' in c.lower()), None)
+source_col = 'source' if 'source' in df.columns else next((c for c in df.columns if 'annee' in c.lower() or 'year' in c.lower()), None)
+
+# Normalisation minimale
+df[sim_col] = pd.to_numeric(df[sim_col], errors='coerce').fillna(0.0).clip(0.0, 1.0)
+if text_col is None:
+    df['texte_extrait'] = ''
+else:
+    df['texte_extrait'] = df[text_col].astype(str).str.replace('\n',' ').str.slice(0,300)
+
+# Marquer ruptures
+df['is_rupture'] = df[sim_col] < SEUIL
+
+# Extraire les lignes en rupture
+ruptures_df = df[df['is_rupture']].copy().reset_index()
+
+# Colonnes utiles à afficher
+cols_to_show = ['index', source_col if source_col in df.columns else None, sim_col, 'texte_extrait']
+cols_to_show = [c for c in cols_to_show if c is not None]
+
+# Afficher un aperçu
+print(f"Articles en rupture (score < {SEUIL}): {len(ruptures_df)} trouvés\n")
+
+# Pour réutiliser : ruptures_df contient les lignes complètes en rupture
+ruptures_df
+
+
+# Visualiser taille (nombre de caractères) vs score de similarité
+# Requis : pandas, numpy, plotly
+# Utilise uniquement le DataFrame `data` présent dans l'environnement
+
+import numpy as np
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+
+# --- Paramètres ---
+EXCERPT_LEN = 200   # longueur d'extrait pour le hover
+SEED = 42
+
+
+df = data.copy()
+
+# Détecter la colonne de similarité
+possible_sim_cols = [
+    'similarite', 'similarity', 'similarite_max_artice', 'similarite_max_article',
+    'similarite_max_artice', 'similarite_max_article'
+]
+sim_col = next((c for c in possible_sim_cols if c in df.columns), None)
+if sim_col is None:
+    raise ValueError(f"Aucune colonne de similarité trouvée. Cherche parmi : {possible_sim_cols}")
+
+# Détecter la colonne de texte (préférence pour 'texte_complet')
+text_col = 'texte_complet' if 'texte_complet' in df.columns else next((c for c in df.columns if 'texte' in c.lower() or 'text' in c.lower()), None)
+if text_col is None:
+    # si pas de colonne texte, on crée une colonne vide pour éviter les erreurs
+    df['texte_complet'] = ''
+    text_col = 'texte_complet'
+
+# Détecter colonne source (optionnel)
+source_col = 'source' if 'source' in df.columns else next((c for c in df.columns if 'annee' in c.lower() or 'year' in c.lower()), None)
+if source_col is None:
+    df['source'] = 'unknown'
+    source_col = 'source'
+
+# Nettoyage minimal
+df[sim_col] = pd.to_numeric(df[sim_col], errors='coerce').fillna(0.0).clip(0.0, 1.0)
+df[text_col] = df[text_col].astype(str)
+df[source_col] = df[source_col].astype(str)
+
+# Calculer la taille (nombre de caractères) et un extrait pour le hover
+df['char_count'] = df[text_col].str.len()
+df['excerpt'] = df[text_col].str.replace('\n', ' ').str.slice(0, EXCERPT_LEN)
+
+# Préparer les colonnes utilisées
+x = df['char_count'].values
+y = df[sim_col].values
+
+# Calcul de la droite de régression linéaire (y = a*x + b) sur les données
+# On normalise x pour éviter problèmes d'échelle (optionnel)
+x_norm = (x - x.mean()) / (x.std() + 1e-9)
+a, b = np.polyfit(x_norm, y, 1)
+# Générer ligne de tendance pour l'affichage
+x_line = np.linspace(x_norm.min(), x_norm.max(), 200)
+y_line = a * x_line + b
+# Reconvertir x_line en valeurs de char_count pour positionnement si besoin
+x_line_chars = x_line * (x.std() + 1e-9) + x.mean()
+
+# Palette automatique par source
+unique_sources = df[source_col].unique().tolist()
+base_colors = px.colors.qualitative.Plotly
+color_map = {s: base_colors[i % len(base_colors)] for i, s in enumerate(unique_sources)}
+df['color'] = df[source_col].map(color_map).fillna('#7f7f7f')
+
+# --- Tracé Plotly (scatter + trendline) ---
+fig = go.Figure()
+
+# Ajouter points par source (pour légende propre)
+for src in unique_sources:
+    sub = df[df[source_col] == src]
+    fig.add_trace(
+        go.Scatter(
+            x=sub['char_count'],
+            y=sub[sim_col],
+            mode='markers',
+            name=str(src),
+            marker=dict(size=8, color=color_map.get(src)),
+            hovertemplate=(
+                "<b>%{text}</b><br>"
+                "Source: " + str(src) + "<br>"
+                "Taille (chars): %{x}<br>"
+                "Score: %{y:.3f}<br>"
+                "Extrait: %{customdata}<extra></extra>"
+            ),
+            text=sub.index.astype(str),
+            customdata=sub['excerpt']
+        )
+    )
+
+# Ajouter la droite de tendance
+fig.add_trace(
+    go.Scatter(
+        x=x_line_chars,
+        y=y_line,
+        mode='lines',
+        name='Tendance linéaire',
+        line=dict(color='black', width=2, dash='dash')
+    )
+)
+
+# Ajouter annotations statistiques
+corr = np.corrcoef(x, y)[0,1] if len(x) > 1 else np.nan
+median_len = int(np.median(x)) if len(x) > 0 else 0
+median_score = float(np.median(y)) if len(y) > 0 else 0.0
+
+fig.update_layout(
+    title=dict(text="Taille du texte (nombre de caractères) vs Score de similarité", x=0.5),
+    xaxis=dict(title="Taille du texte (caractères)", showgrid=True, gridcolor="#f0f0f0"),
+    yaxis=dict(title="Score de similarité (cosinus)", range=[0, 1.02], tickformat=".2f", showgrid=True, gridcolor="#f0f0f0"),
+    template='plotly_white',
+    legend=dict(title="Source", orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60, r=40, t=90, b=60),
+    height=600,
+    annotations=[
+        dict(
+            x=0.01, y=0.99, xref='paper', yref='paper',
+            text=f"n = {len(df)} • corr = {corr:.3f} • médiane taille = {median_len} • médiane score = {median_score:.3f}",
+            showarrow=False, align='left', font=dict(size=11)
+        )
+    ]
+)
+
+# Afficher la figure interactive
+fig.show()
+
+
+
+#(budget_df_1.cp.str.replace(' ','').astype(int) - budget_df_1.ae.str.replace(' ','').astype(int)).quantile(0.96901)
+
+import os
+import pandas as pd
+from tqdm import tqdm
+from huggingface_hub import snapshot_download
+from transformers import pipeline
+import torch
+
+# Désactiver l'avertissement symlink sur Windows
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+
+def classer_ligne_dep_snd30(
+    liste_libelles,
+    batch_size=16,
+    device="auto",
+    model_name="mtheo/camembert-base-xnli",  # ✅ Modèle français spécialisé
+    modele_dir="./modele",
+    hypothesis_template="Ce texte parle de {}."
+):
+    """
+    Classifie des libellés budgétaires en français via zero-shot classification
+    avec un modèle CamemBERT fine-tuné sur XNLI.
+    """
+    os.makedirs(modele_dir, exist_ok=True)
+    safe_folder = model_name.replace("/", "__")
+    local_model_path = os.path.join(modele_dir, safe_folder)
+
+    # Charger depuis le disque si déjà téléchargé
+    if os.path.isdir(local_model_path) and os.listdir(local_model_path):
+        model_source = local_model_path
+        print(f"✅ Chargement du modèle depuis : {model_source}")
+    else:
+        print(f"📥 Téléchargement initial du modèle {model_name}...")
+        try:
+            path = snapshot_download(
+                repo_id=model_name,
+                local_dir=local_model_path,
+                local_dir_use_symlinks=False
+            )
+            model_source = path
+            print(f"✅ Téléchargement terminé : {model_source}")
+        except Exception as e:
+            raise RuntimeError(
+                f"❌ Échec du téléchargement de {model_name}. "
+                f"Vérifiez votre connexion. Erreur : {e}"
+            )
+
+    # Gestion du device
+    if device == "auto":
+        device = 0 if torch.cuda.is_available() else -1
+    elif isinstance(device, str):
+        raise ValueError("Paramètre 'device' doit être 'auto', 0 (GPU) ou -1 (CPU).")
+
+    print(f"⚙️ Utilisation du device : {'GPU' if device >= 0 else 'CPU'}")
+
+    # Création du pipeline
+    classifier = pipeline(
+        "zero-shot-classification",
+        model=model_source,
+        tokenizer=model_source,
+        device=device
+    )
+
+    piliers = [
+        "Transformation structurelle et économique",
+        "Capital humain et bien-être",
+        "Gouvernance et administration",
+        "Développement régional et décentralisation"
+    ]
+
+    resultats = []
+    for i in tqdm(range(0, len(liste_libelles), batch_size), desc="Classification"):
+        batch = liste_libelles[i:i + batch_size]
+        predictions = classifier(
+            batch,
+            candidate_labels=piliers,
+            hypothesis_template=hypothesis_template,
+            multi_label=False,
+            batch_size=min(batch_size, len(batch))
+        )
+        if isinstance(predictions, dict):
+            predictions = [predictions]
+        for lib, pred in zip(batch, predictions):
+            resultats.append({
+                "Libellé": lib,
+                "Pilier": pred['labels'][0],
+                "Score": round(pred['scores'][0], 4)
+            })
+
+    return pd.DataFrame(resultats)
+
+
+projet_2025 = budget_df_2.libelle.tolist()
+len(projet_2025)
+projet_2024 = budget_df_1.libelle.tolist()
+len(projet_2024)
+df_classification1 = classer_ligne_dep_snd30(projet_2024)
+df_classification2 = classer_ligne_dep_snd30(projet_2025)
+
+
+df_classification1['source'] = '2023-2024'
+df_classification2['source'] = '2024-2025'
+df_classification_all = pd.concat([df_classification1, df_classification2])
+df_classification_all
+
+import plotly.graph_objects as go
+import plotly.express as px
+from plotly.subplots import make_subplots
+import pandas as pd
+import numpy as np
+
+# Assurez-vous que 'source' est au format "YYYY-YYYY" ou "YYYY"
+# Si besoin, extrayez l'année de début :
+df = df_classification_all.copy()
+df['Annee'] = df['source'].str.split('-').str[0].astype(int)  # ex: "2023-2024" → 2023
+# Compter les occurrences par (Annee, Pilier)
+counts = df.groupby(['Annee', 'Pilier']).size().reset_index(name='Count')
+
+# Créer un graphique interactif
+fig1 = go.Figure()
+
+# Ajouter une barre par année (stacked horizontal)
+for year in sorted(counts['Annee'].unique()):
+    year_data = counts[counts['Annee'] == year]
+    fig1.add_trace(
+        go.Bar(
+            y=year_data['Pilier'],
+            x=year_data['Count'],
+            name=str(year),
+            orientation='h',
+            text=year_data['Count'],
+            textposition='auto',
+            hoverinfo='text',
+            hovertext=[f"{row.Pilier}: {row.Count} lignes ({year})" for _, row in year_data.iterrows()]
+        )
+    )
+
+fig1.update_layout(
+    title="📊 Répartition des piliers par année",
+    xaxis_title="Nombre de libellés classifiés",
+    yaxis_title="Pilier stratégique",
+    barmode='stack',
+    height=600,
+    legend_title="Année",
+    template="plotly_white"
+)
+fig1.show()
+fig2 = go.Figure()
+
+colors = px.colors.qualitative.Set3[:len(df['Annee'].unique())]
+
+for i, (year, group) in enumerate(df.groupby('Annee')):
+    fig2.add_trace(
+        go.Histogram(
+            x=group['Score'],
+            name=str(year),
+            nbinsx=20,
+            opacity=0.75,
+            marker_color=colors[i],
+            histnorm='probability',  # pour comparer les distributions
+            hovertemplate=(
+                f"<b>Année {year}</b><br>"
+                "Score: %{x:.3f}<br>"
+                "Fréquence: %{y:.2%}<extra></extra>"
+            )
+        )
+    )
+
+fig2.update_layout(
+    title="📈 Distribution des scores de classification par année",
+    xaxis_title="Score de confiance (0–1)",
+    yaxis_title="Proportion des libellés",
+    barmode='overlay',
+    legend_title="Année",
+    template="plotly_white",
+    height=500
+)
+fig2.update_xaxes(range=[0, 1])
+fig2.show()
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import pandas as pd
+
+# Assurez-vous que df a une colonne 'Annee' (entier)
+df = df_classification_all.copy()
+df['Annee'] = df['source'].str.split('-').str[0].astype(int)
+
+# Obtenir la liste des piliers
+piliers = df['Pilier'].unique()
+n_piliers = len(piliers)
+
+# Créer une grille 2x2 (même si <4 piliers, ça s'adapte)
+fig = make_subplots(
+    rows=2,
+    cols=2,
+    subplot_titles=piliers,
+    vertical_spacing=0.1,
+    horizontal_spacing=0.08
+)
+
+# Palette de couleurs (une par année)
+annees = sorted(df['Annee'].unique())
+colors_annee = px.colors.qualitative.Plotly[:len(annees)]
+annee_to_color = dict(zip(annees, colors_annee))
+
+row_col = [(1,1), (1,2), (2,1), (2,2)]
+
+for idx, pilier in enumerate(piliers):
+    row, col = row_col[idx]
+    data_pilier = df[df['Pilier'] == pilier]
+    
+    for year in annees:
+        subset = data_pilier[data_pilier['Annee'] == year]
+        if not subset.empty:
+            fig.add_trace(
+                go.Box(
+                    y=subset['Score'],
+                    x=[str(year)] * len(subset),
+                    name=str(year),
+                    marker_color=annee_to_color[year],
+                    showlegend=(idx == 0),  # légende seulement sur le premier subplot
+                    boxmean=True,
+                    hovertemplate=(
+                        f"<b>{pilier}</b><br>"
+                        f"Année: {year}<br>"
+                        "Score: %{y:.3f}<extra></extra>"
+                    )
+                ),
+                row=row, col=col
+            )
+
+# Mise en page globale
+fig.update_layout(
+    title="📦 Scores de classification par pilier et année",
+    height=800,
+    template="plotly_white",
+    legend_title="Année"
+)
+
+# Mettre les labels Y et X sur tous les sous-graphes
+fig.update_yaxes(title_text="Score de confiance", range=[0, 1])
+fig.update_xaxes(title_text="Année")
+
+fig.show()     
+
+import pandas as pd
+
+# 1. Concaténation des budgets originaux (pour avoir les montants)
+# Assurez-vous d'avoir une colonne 'source' ou 'Annee' dans ces DFs pour la jointure
+budget_df_1['source'] = '2023-2024'  # Basé sur [2]
+budget_df_2['source'] = '2024-2025'  # Basé sur [3]
+
+# On combine les données financières brutes
+df_budget_financier = pd.concat([budget_df_1, budget_df_2], ignore_index=True)
+
+# 2. Nettoyage des montants (Crucial car souvent lus comme texte "1 000 000")
+def nettoyer_montant(valeur):
+    if isinstance(valeur, str):
+        # Enlève les espaces insécables et convertit en float
+        clean_val = valeur.replace(' ', '').replace('.', '').replace(',', '.')
+        try:
+            return float(clean_val)
+        except:
+            return 0.0
+    return float(valeur) if isinstance(valeur, (int, float)) else 0.0
+
+df_budget_financier['ae_clean'] = df_budget_financier['ae'].apply(nettoyer_montant)
+df_budget_financier['cp_clean'] = df_budget_financier['cp'].apply(nettoyer_montant)
+
+# 3. Fusion avec votre Classification
+# On joint sur 'Libellé' et 'source' pour être sûr de matcher la bonne ligne
+df_final = pd.merge(
+    df_budget_financier, 
+    df_classification_all[['Libellé', 'Pilier', 'source']], 
+    left_on=['libelle', 'source'], 
+    right_on=['Libellé', 'source'], 
+    how='inner' # ou 'left' si vous voulez garder les non-classés
+)
+
+# Maintenant df_final contient : Libellé | Pilier | AE | CP | source
+
+
+df_final
+
+# Agrégation par Année et par Pilier
+analyse_conformite = df_final.groupby(['source', 'Pilier']).agg({
+    'Libellé': 'count',          # Fréquence thématique
+    'cp_clean': 'sum'            # Montant réel alloué [1]
+}).reset_index()
+
+# Renommer pour la clarté
+analyse_conformite.columns = ['Année', 'Pilier_SND30', 'Nombre_Projets', 'Budget_Total_CP']
+
+# Calcul des parts relatives (en %) pour la comparaison
+# Pour chaque année, on divise par le total de l'année
+def calculer_parts(groupe):
+    total_projets = groupe['Nombre_Projets'].sum()
+    total_budget = groupe['Budget_Total_CP'].sum()
+    
+    groupe['Part_Frequence (%)'] = (groupe['Nombre_Projets'] / total_projets) * 100
+    groupe['Part_Budget (%)'] = (groupe['Budget_Total_CP'] / total_budget) * 100
+    
+    # Le "Gap" mesure l'incohérence
+    groupe['Gap_Conformité'] = groupe['Part_Budget (%)'] - groupe['Part_Frequence (%)']
+    return groupe
+
+df_analyse = analyse_conformite.groupby('Année').apply(calculer_parts).reset_index(drop=True)
+
+(df_analyse)
+
+import plotly.graph_objects as go
+import plotly.express as px
+
+# Obtenir une palette de couleurs pour les piliers
+piliers = df_analyse['Pilier_SND30'].unique()
+colors = px.colors.qualitative.Plotly[:len(piliers)]
+pilier_to_color = dict(zip(piliers, colors))
+
+# Obtenir les symboles pour les années (Plotly: 0=cercle, 1=carré, 2=losange, etc.)
+annees = sorted(df_analyse['Année'].unique())
+symbols = [0, 1, 2, 3, 4, 100, 101, 102][:len(annees)]  # symboles uniques
+annee_to_symbol = dict(zip(annees, symbols))
+
+# Créer la figure
+fig = go.Figure()
+
+# Ajouter un trace par pilier (pour avoir la légende propre)
+for pilier in piliers:
+    subset = df_analyse[df_analyse['Pilier_SND30'] == pilier]
+    fig.add_trace(
+        go.Scatter(
+            x=subset['Part_Frequence (%)'],
+            y=subset['Part_Budget (%)'],
+            mode='markers',
+            marker=dict(
+                size=12,
+                color=pilier_to_color[pilier],
+                symbol=[annee_to_symbol[year] for year in subset['Année']],
+                line=dict(width=1, color='DarkSlateGrey')
+            ),
+            name=pilier,
+            hovertemplate=(
+                "<b>%{text}</b><br>"
+                "Fréquence : %{x:.2f}%<br>"
+                "Budget : %{y:.2f}%<br>"
+                "<extra></extra>"
+            ),
+            text=subset.apply(lambda row: f"{row['Pilier_SND30']} ({row['Année']})", axis=1)
+        )
+    )
+
+# Ajouter la ligne diagonale x = y
+min_val = min(df_analyse['Part_Frequence (%)'].min(), df_analyse['Part_Budget (%)'].min())
+max_val = max(df_analyse['Part_Frequence (%)'].max(), df_analyse['Part_Budget (%)'].max())
+fig.add_trace(
+    go.Scatter(
+        x=[min_val, max_val],
+        y=[min_val, max_val],
+        mode='lines',
+        line=dict(color='red', dash='dash', width=2),
+        name='Alignement parfait (x=y)',
+        showlegend=True
+    )
+)
+
+# Mise en page
+fig.update_layout(
+    title="🎯 Alignement entre Discours (Fréquence) et Budget (Montant)",
+    xaxis_title="% du Nombre de Lignes Budgétaires",
+    yaxis_title="% du Montant Financier (CP)",
+    legend_title="Pilier / Année",
+    template="plotly_white",
+    height=500,
+    width=1200,
+    hovermode='closest'
+)
+
+# Afficher
+fig.show()
+
+import numpy as np
+import pandas as pd
+
+def calculer_gini(array):
+    """
+    Calcule l'indice de Gini pour un tableau de montants.
+    Version corrigée pour gérer le type tuple de numpy.shape.
+    """
+    # 1. Conversion en tableau numpy et sécurisation
+    array = np.array(array, dtype=np.float64)
+    
+    # 2. On ne garde que les montants positifs pour éviter les erreurs mathématiques
+    # (Les budgets négatifs ou nuls faussent le Gini)
+    array = array[array > 0]
+    
+    # Si le tableau est vide après filtrage (ex: que des zéros), Gini = 0
+    if array.size == 0:
+        return 0.0
+    
+    # 3. Aplatir le tableau pour s'assurer qu'il est en 1 dimension
+    array = array.flatten()
+    
+    # 4. Tri des valeurs (indispensable pour le calcul Gini)
+    array = np.sort(array)
+    
+    # --- CORRECTION DE L'ERREUR ICI ---
+    # On utilise len() pour avoir un entier, et non .shape qui donne un tuple
+    n = len(array)
+    
+    # 5. Génération des index (1, 2, ..., n)
+    index = np.arange(1, n + 1)
+    
+    # 6. Formule standard de Gini
+    return ((np.sum((2 * index - n  - 1) * array)) / (n * np.sum(array)))
+
+# --- Fonction d'analyse (Mise à jour) ---
+def analyse_concentration_par_pilier(df):
+    resultats = []
+    
+    # On groupe par Année (source) et par Pilier SND30
+    # Assurez-vous que vos colonnes s'appellent bien 'source' et 'Pilier'
+    if 'Pilier_SND30_Predit' in df.columns:
+        col_pilier = 'Pilier_SND30_Predit' 
+    else:
+        col_pilier = 'Pilier'
+
+    groupes = df.groupby(['source', col_pilier])
+    
+    for (annee, pilier), groupe in groupes:
+        # On extrait les montants (CP) pour ce groupe
+        # On utilise cp_clean ou cp selon votre dataframe
+        col_montant = 'cp_clean' if 'cp_clean' in groupe.columns else 'cp'
+        montants_cp = groupe[col_montant].values
+        
+        # Appel de la fonction corrigée
+        gini_score = calculer_gini(montants_cp)
+        
+        total_budget = groupe[col_montant].sum()
+        nb_projets = len(groupe)
+        
+        # Le "Ticket Moyen" (Montant moyen par ligne)
+        ticket_moyen = total_budget / nb_projets if nb_projets > 0 else 0
+        
+        resultats.append({
+            'Année': annee,
+            'Pilier_SND30': pilier,
+            'Indice_Gini': round(gini_score, 3), # 0 = Saupoudrage, 1 = Concentration
+            'Budget_Total_CP': total_budget,
+            'Ticket_Moyen_Projet': round(ticket_moyen, 0),
+            'Nombre_Projets': nb_projets
+        })
+        
+    return pd.DataFrame(resultats)
+
+# --- Relance de l'exécution ---
+# Assurez-vous que df_final est bien chargé
+df_gini = analyse_concentration_par_pilier(df_final)
+
+# Affichage trié pour voir les piliers les plus concentrés
+print("Analyse de la Concentration Budgétaire (Indice de Gini) :")
+(df_gini.sort_values(by=['Année', 'Indice_Gini'], ascending=[True, False]))
+
+
+
+# Fusionner pour ajouter la colonne Gini à votre dataframe principal
+df_plot = pd.merge(
+    df_analyse, 
+    df_gini[['Année', 'Pilier_SND30', 'Indice_Gini']], 
+    on=['Année', 'Pilier_SND30'], 
+    how='left'
+)
+
+# Remplacer les valeurs manquantes éventuelles par 0 pour éviter les erreurs de graphique
+df_plot['Indice_Gini'] = df_plot['Indice_Gini'].fillna(0)
+
+
+# --- ÉTAPE 1 : Sécurisation des données ---
+df_plot['Année'] = df_plot['Année'].astype(str).str.strip()
+
+if 'Indice_Gini' not in df_plot.columns:
+    df_plot['Indice_Gini'] = 0.1
+else:
+    df_plot['Indice_Gini'] = df_plot['Indice_Gini'].fillna(0.1)
+
+# --- ÉTAPE 2 : Mappings dynamiques ---
+annees_uniques = sorted(df_plot['Année'].unique())
+piliers_uniques = sorted(df_plot['Pilier_SND30'].unique())
+
+print(f"Années détectées : {annees_uniques}")
+
+# Couleurs pour les piliers
+colors = px.colors.qualitative.Plotly + px.colors.qualitative.Bold
+pilier_to_color = {pilier: colors[i % len(colors)] for i, pilier in enumerate(piliers_uniques)}
+
+# ✅ CORRECTION ICI : Liste de symboles VALIDES de Plotly
+symboles_dispo = [0, 1, 2, 3, 4, 100, 101, 102]  # cercle, carré, losange, croix, x, etc.
+# Voir la liste complète ici : https://plotly.com/python/marker-style/
+
+annee_to_symbol = {
+    annee: symboles_dispo[i % len(symboles_dispo)]
+    for i, annee in enumerate(annees_uniques)
+}
+
+# --- ÉTAPE 3 : Création du graphique ---
+fig = go.Figure()
+
+for pilier in piliers_uniques:
+    subset = df_plot[df_plot['Pilier_SND30'] == pilier]
+    
+    tailles = (subset['Indice_Gini'] * 50) + 10
+    
+    # ✅ Symboles garantis valides
+    symboles_subset = [annee_to_symbol[a] for a in subset['Année']]
+    
+    fig.add_trace(
+        go.Scatter(
+            x=subset['Part_Frequence (%)'],
+            y=subset['Part_Budget (%)'],
+            mode='markers',
+            marker=dict(
+                size=tailles,
+                sizemode='diameter',
+                color=pilier_to_color[pilier],
+                symbol=symboles_subset,
+                line=dict(width=1, color='DarkSlateGrey'),
+                opacity=0.8
+            ),
+            name=pilier,
+            customdata=subset['Indice_Gini'],
+            hovertemplate=(
+                "<b>%{text}</b><br>"
+                "----------------<br>"
+                "🗣️ Fréquence (Bruit) : %{x:.2f}%<br>"
+                "💰 Budget (Argent) : %{y:.2f}%<br>"
+                "📊 Concentration (Gini) : %{customdata:.3f}<br>"
+                "<extra></extra>"
+            ),
+            text=subset.apply(lambda row: f"{row['Pilier_SND30']} ({row['Année']})", axis=1)
+        )
+    )
+
+# Ligne d'alignement parfait
+max_val = max(df_plot['Part_Frequence (%)'].max(), df_plot['Part_Budget (%)'].max()) + 5
+fig.add_trace(
+    go.Scatter(
+        x=[0, max_val],
+        y=[0, max_val],
+        mode='lines',
+        line=dict(color='red', dash='dash', width=1),
+        name='Alignement Parfait',
+        showlegend=True
+    )
+)
+
+fig.update_layout(
+    title="<b>Analyse Stratégique : Alignement & Concentration Budgétaire</b>",
+    xaxis_title="Part du Discours (% du Nombre de Projets)",
+    yaxis_title="Part du Budget Réel (% des CP)",
+    legend_title="Piliers SND30",
+    template="plotly_white",
+    height=600
+)
+
+fig.show()   
+
+

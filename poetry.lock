@@ -1,0 +1,18 @@
+# --- Installation initiale ---
+pip install poetry                    # Installer Poetry (une seule fois)
+poetry new analyse-budget-cameroun    # Créer nouveau projet, OU :
+poetry init                           # Initialiser dans un dossier existant
+
+# --- Gestion des dépendances ---
+poetry install                        # Installer tout depuis pyproject.toml
+poetry add streamlit openai pdfplumber # Ajouter des packages
+poetry add --group dev pytest black   # Ajouter des dépendances de dev
+poetry remove package-name            # Supprimer un package
+poetry update                         # Mettre à jour les dépendances
+
+# --- Exécution ---
+poetry run streamlit run app.py   # Lancer l'app
+poetry shell                          # Activer l'environnement virtuel
+
+# --- Export pour déploiement ---
+poetry export -f requirements.txt --output requirements.txt --without-hashes
